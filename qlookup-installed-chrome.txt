@@ -1,0 +1,2 @@
+content,install,url,resource:/chrome/qlookup/content/
+locale,install,url,resource:/chrome/qlookup/locale/en-US/qlookup/
