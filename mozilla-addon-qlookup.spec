@@ -7,6 +7,7 @@ Release:	3
 License:	GPL
 Group:		X11/Applications/Networking
 Source0:	http://www.xenolinguistics.com/qlookup.mozdev/qlookup/www/%{_realname}.xpi
+# Source0-md5:	7d7ecb470b1f3ac270c87a66bd13e5c2
 Source1:	%{_realname}-installed-chrome.txt
 URL:		http://qlookup.mozdev.org/
 BuildRequires:	unzip
