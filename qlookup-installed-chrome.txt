@@ -1,2 +1,2 @@
-content,install,url,resource:/chrome/qlookup/content/
-locale,install,url,resource:/chrome/qlookup/locale/en-US/qlookup/
+content,install,url,jar:resource:/chrome/qlookup.jar!/content/
+locale,install,url,jar:resource:/chrome/qlookup.jar!/locale/en-US/qlookup/
