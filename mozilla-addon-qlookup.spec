@@ -3,7 +3,7 @@ Summary(pl):	Wyszukiwarka w menu kontekstowym
 Name:		mozilla-addon-qlookup
 %define		_realname	qlookup
 Version:	0.1.0
-Release:	3
+Release:	4
 License:	GPL
 Group:		X11/Applications/Networking
 Source0:	http://www.xenolinguistics.com/qlookup.mozdev/qlookup/www/%{_realname}.xpi
@@ -17,7 +17,7 @@ Requires:	mozilla >= 1.0-7
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{_realname}-%{version}-root-%(id -u -n)
 
-%define		_chromedir	%{_libdir}/mozilla/chrome
+%define		_chromedir	%{_datadir}/mozilla/chrome
 
 %description
 A tool for simple and quick searching of text selected in browser
