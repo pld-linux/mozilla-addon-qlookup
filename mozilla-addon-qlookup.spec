@@ -3,7 +3,7 @@ Summary(pl):	Wyszukiwarka w menu kontekstowym
 Name:		mozilla-addon-qlookup
 %define		_realname	qlookup
 Version:	0.1.0
-Release:	4
+Release:	5
 License:	GPL
 Group:		X11/Applications/Networking
 Source0:	http://www.xenolinguistics.com/qlookup.mozdev/qlookup/www/%{_realname}.xpi
@@ -12,6 +12,7 @@ Source1:	%{_realname}-installed-chrome.txt
 URL:		http://qlookup.mozdev.org/
 BuildRequires:	unzip
 BuildRequires:	zip
+Requires(post,postun):	mozilla
 Requires(post,postun):	textutils
 Requires:	mozilla >= 1.0-7
 BuildArch:	noarch
@@ -49,11 +50,19 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 umask 022
-cat %{_chromedir}/*-installed-chrome.txt >%{_chromedir}/installed-chrome.txt
+cat %{_chromedir}/*-installed-chrome.txt >%{_chromedir}/installed-chrome.txt ||:
+rm -f %{_libdir}/mozilla/components/{compreg,xpti}.dat \
+        %{_datadir}/mozilla/chrome/{chrome.rdf,overlayinfo/*/*/*.rdf} ||:
+MOZILLA_FIVE_HOME=%{_libdir}/mozilla %{_bindir}/regxpcom ||:
+MOZILLA_FIVE_HOME=%{_libdir}/mozilla %{_bindir}/regchrome ||:
 
 %postun
 umask 022
 cat %{_chromedir}/*-installed-chrome.txt >%{_chromedir}/installed-chrome.txt
+rm -f %{_libdir}/mozilla/components/{compreg,xpti}.dat \
+        %{_datadir}/mozilla/chrome/{chrome.rdf,overlayinfo/*/*/*.rdf}
+MOZILLA_FIVE_HOME=%{_libdir}/mozilla %{_bindir}/regxpcom
+MOZILLA_FIVE_HOME=%{_libdir}/mozilla %{_bindir}/regchrome
 
 %files
 %defattr(644,root,root,755)
