@@ -1,5 +1,5 @@
 Summary:	Search tool in context menu
-Summary(pl):	Wyszukiwarka w menu kontekstowym
+Summary(pl.UTF-8):   Wyszukiwarka w menu kontekstowym
 Name:		mozilla-addon-qlookup
 %define		_realname	qlookup
 Version:	0.1.0
@@ -24,9 +24,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 A tool for simple and quick searching of text selected in browser
 window, accessible from context menu.
 
-%description -l pl
-Proste i szybkie wyszukiwanie zaznaczanego tekstu w oknie przegl±darki
-po wywo³aniu menu kontekstowego.
+%description -l pl.UTF-8
+Proste i szybkie wyszukiwanie zaznaczanego tekstu w oknie przeglÄ…darki
+po wywoÅ‚aniu menu kontekstowego.
 
 %prep
 %setup -q -c
