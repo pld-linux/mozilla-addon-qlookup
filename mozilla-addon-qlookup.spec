@@ -1,5 +1,5 @@
 Summary:	Search tool in context menu
-Summary(pl.UTF-8):   Wyszukiwarka w menu kontekstowym
+Summary(pl.UTF-8):	Wyszukiwarka w menu kontekstowym
 Name:		mozilla-addon-qlookup
 %define		_realname	qlookup
 Version:	0.1.0
